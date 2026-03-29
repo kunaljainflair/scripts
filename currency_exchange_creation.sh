@@ -1,81 +1,250 @@
 #!/bin/bash
-set -euo pipefail
+set -e
 
+# =========================
+# Configurable variables
+# =========================
 BASE_URL="http://localhost:8080"
 TENANT_ID="5a62b693-c1d2-436d-8644-854b08fc4c7c"
+USER_ID="1ef2485b-0494-4465-b87c-617aac79deec"
+USER_ROLES="b8838caf-b062-46c9-a171-5ed2e96a3c6c"
 
-COMMON_HEADER=(-H "x-tenant-id: ${TENANT_ID}")
+COMMON_HEADER=(-H "x-tenant-id: ${TENANT_ID}" -H "x-user-id: ${USER_ID}" -H "x-user-roles: ${USER_ROLES}")
 JSON_HEADER=(-H "Content-Type: application/json")
 
-USER_HEADER=(-H "x-user-id: 1ef2485b-0494-4465-b87c-617aac79deec" -H "x-user-roles: 123")
+echo "🚀 Starting provisioning for tenant: ${TENANT_ID}"
 
-log_step() {
-  echo ""
-  echo "========================================"
-  echo "➡️  $1"
-  echo "========================================"
-}
+# =========================
+# 1. Create currency_pair
+# =========================
+curl -s -X POST \
+  "${BASE_URL}/api/core/meta/objects/bundle" \
+  "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
+  -d '{
+    "object": {
+      "entity_name": "currency_pair",
+      "label": "Currency Pairs",
+      "description": "---",
+      "entity_type": "CORE",
+      "entity_strength": "STRONG_ENTITY",
+      "allow_multiple_instance": true,
+      "parent": ""
+    },
+    "fields": [
+      {
+        "field_name": "conversion_rate",
+        "field_label": "Conversion Rate",
+        "field_type": "CUSTOM",
+        "field_data_type": "DECIMAL"
+      },
+      {
+        "field_name": "is_active",
+        "field_label": "Is Active",
+        "field_type": "CORE",
+        "field_data_type": "BOOLEAN"
+      },
+      {
+        "field_name": "markup_pips",
+        "field_label": "Markup Value( in pips)",
+        "field_type": "CUSTOM",
+        "field_data_type": "INTEGER"
+      },
+      {
+        "field_name": "markup_on_deposit",
+        "field_label": "Markup on Deposit",
+        "field_type": "CUSTOM",
+        "field_data_type": "BOOLEAN"
+      },
+      {
+        "field_name": "markup_on_withdrawal",
+        "field_label": "Markup on Withdrawal",
+        "field_type": "CUSTOM",
+        "field_data_type": "BOOLEAN"
+      },
+      {
+        "field_name": "markup_on_internal",
+        "field_label": "Markup on Internal Transfer",
+        "field_type": "CUSTOM",
+        "field_data_type": "BOOLEAN"
+      },
+      {
+        "field_name": "manual_rate_enable",
+        "field_label": "Manual Rate Enabled",
+        "field_type": "CUSTOM",
+        "field_data_type": "BOOLEAN"
+      }
+    ]
+  }'
+echo "✅ currency_pair created"
 
-call_api() {
-  RESPONSE=$(curl -s -w "\nHTTP_STATUS:%{http_code}" "$@")
-  BODY=$(echo "$RESPONSE" | sed -e 's/HTTP_STATUS\:.*//g')
-  STATUS=$(echo "$RESPONSE" | tr -d '\n' | sed -e 's/.*HTTP_STATUS://')
+# =========================
+# 2. Create currency_symbol
+# =========================
+curl -s -X POST \
+  "${BASE_URL}/api/core/meta/objects/bundle" \
+  "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
+  -d '{
+    "object": {
+      "entity_name": "currency_symbol",
+      "label": "Currency Symbols",
+      "description": "---",
+      "entity_type": "CORE",
+      "entity_strength": "STRONG_ENTITY",
+      "allow_multiple_instance": true,
+      "parent": ""
+    },
+    "fields": [
+      {
+        "field_name": "code",
+        "field_label": "Currency Code",
+        "field_type": "CUSTOM",
+        "field_data_type": "TEXT",
+        "required": true,
+        "is_indexed": true
+      },
+      {
+        "field_name": "source_type",
+        "field_label": "Source Type",
+        "field_type": "CUSTOM",
+        "field_data_type": "TEXT",
+        "required": true,
+        "is_indexed": false
+      },
+      {
+        "field_name": "name",
+        "field_label": "Currency Name",
+        "field_type": "CUSTOM",
+        "field_data_type": "TEXT",
+        "required": false
+      },
+      {
+        "field_name": "is_active",
+        "field_label": "Is Active",
+        "field_type": "CORE",
+        "field_data_type": "BOOLEAN"
+      }
+    ]
+  }'
+echo "✅ currency_symbol created"
 
-  echo "Status: $STATUS"
-  echo "Response: $BODY"
-
-  if [ "$STATUS" -ge 400 ]; then
-    echo "❌ API FAILED"
-    exit 1
-  else
-    echo "✅ API SUCCESS"
-  fi
-}
-
-log_step "Create currency_pair"
-call_api -X POST \
-"${BASE_URL}/api/core/meta/objects/bundle" \
-"${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
--d '{ ... currency_pair json ... }'
-
-log_step "Create currency_symbol"
-call_api -X POST \
-"${BASE_URL}/api/core/meta/objects/bundle" \
-"${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
--d '{ ... currency_symbol json ... }'
-
-log_step "Create Relations"
-call_api -X POST "${BASE_URL}/api/core/meta/objects/relations" "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" -d '{ ... quote relation ... }'
-call_api -X POST "${BASE_URL}/api/core/meta/objects/relations" "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" -d '{ ... base relation ... }'
-
-log_step "Publish Objects"
+# =========================
+# 3. Publish objects (first pass)
+# =========================
 for ENTITY in currency_pair currency_symbol; do
-  call_api -X POST \
-  "${BASE_URL}/api/core/meta/objects/name/${ENTITY}/publish" \
-  "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}"
+  curl -s -X POST \
+    "${BASE_URL}/api/core/meta/objects/name/${ENTITY}/publish" \
+    "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}"
+  echo "📦 Published ${ENTITY}"
 done
 
-log_step "Create Actions"
+# =========================
+# 4. Create relations
+# =========================
+curl -s -X POST \
+  "${BASE_URL}/api/core/meta/objects/relations" \
+  "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
+  -d '{
+    "source_entity_name": "currency_symbol",
+    "target_entity_name": "currency_pair",
+    "reference_type": "ONE_TO_MANY",
+    "relation_name": "quote_pair",
+    "inverse_relation_name": "quote_symbol",
+    "relation_label": "Associated quote pairs",
+    "inverse_relation_label": "Associated quote symbols",
+    "association_type": "ASSOCIATION",
+    "is_association_nullable": true,
+    "is_ownership_relation": false
+  }'
+echo "✅ quote_symbol relation created"
 
-call_api -X POST "${BASE_URL}/api/meta/name/currency_pair/actions" \
-"${COMMON_HEADER[@]}" "${USER_HEADER[@]}" "${JSON_HEADER[@]}" \
--d '{ "name": "sync_pairs", "label": "Sync Pairs", "type": "BULK", "input_form_id": null }'
+curl -s -X POST \
+  "${BASE_URL}/api/core/meta/objects/relations" \
+  "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
+  -d '{
+    "source_entity_name": "currency_symbol",
+    "target_entity_name": "currency_pair",
+    "reference_type": "ONE_TO_MANY",
+    "relation_name": "base_pair",
+    "inverse_relation_name": "base_symbol",
+    "relation_label": "Associated base pair",
+    "inverse_relation_label": "Associated base currency symbol",
+    "association_type": "ASSOCIATION",
+    "is_association_nullable": true,
+    "is_ownership_relation": false
+  }'
+echo "✅ base_symbol relation created"
 
-call_api -X POST "${BASE_URL}/api/meta/name/currency_pair/actions" \
-"${COMMON_HEADER[@]}" "${USER_HEADER[@]}" "${JSON_HEADER[@]}" \
--d '{ "name": "find_pair", "label": "Find Pair", "type": "ROW", "input_form_id": null,
-      "parameters": [
-        { "name": "base_symbol_id", "datatype": "uuid" },
-        { "name": "quote_symbol_id", "datatype": "uuid" }
-      ] }'
+# =========================
+# 5. Publish objects (second pass after relations)
+# =========================
+for ENTITY in currency_pair currency_symbol; do
+  curl -s -X POST \
+    "${BASE_URL}/api/core/meta/objects/name/${ENTITY}/publish" \
+    "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}"
+  echo "📦 Re-published ${ENTITY}"
+done
 
-call_api -X POST "${BASE_URL}/api/meta/name/currency_pair/actions" \
-"${COMMON_HEADER[@]}" "${USER_HEADER[@]}" "${JSON_HEADER[@]}" \
--d '{ "name": "get_pair", "label": "Get Pair", "type": "ROW", "input_form_id": null }'
+# =========================
+# 6. Register actions
+# =========================
 
-call_api -X POST "${BASE_URL}/api/meta/name/currency_pair/actions" \
-"${COMMON_HEADER[@]}" "${USER_HEADER[@]}" "${JSON_HEADER[@]}" \
--d '{ "name": "edit", "label": "Edit Currency Pair", "type": "ROW", "input_form_id": null }'
+# sync_pairs — BULK
+curl -s -X POST \
+  "${BASE_URL}/api/core/meta/objects/name/currency_pair/actions" \
+  "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
+  -d '{
+    "name": "sync_pairs",
+    "label": "Sync Pairs",
+    "input_form_id": null,
+    "type": "BULK"
+  }'
+echo "✅ Action registered: sync_pairs"
+
+# find_pair — ROW with parameters
+curl -s -X POST \
+  "${BASE_URL}/api/core/meta/objects/name/currency_pair/actions" \
+  "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
+  -d '{
+    "name": "find_pair",
+    "label": null,
+    "input_form_id": null,
+    "type": "ROW",
+    "parameters": [
+      {
+        "name": "base_symbol_id",
+        "datatype": "uuid"
+      },
+      {
+        "name": "quote_symbol_id",
+        "datatype": "uuid"
+      }
+    ]
+  }'
+echo "✅ Action registered: find_pair"
+
+# get_pair — ROW
+curl -s -X POST \
+  "${BASE_URL}/api/core/meta/objects/name/currency_pair/actions" \
+  "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
+  -d '{
+    "name": "get_pair",
+    "label": null,
+    "input_form_id": null,
+    "type": "ROW"
+  }'
+echo "✅ Action registered: get_pair"
+
+# edit — ROW
+curl -s -X POST \
+  "${BASE_URL}/api/core/meta/objects/name/currency_pair/actions" \
+  "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
+  -d '{
+    "name": "edit",
+    "label": null,
+    "input_form_id": null,
+    "type": "ROW"
+  }'
+echo "✅ Action registered: edit"
 
 echo ""
-echo "🎉 ALL PROVISIONING COMPLETED SUCCESSFULLY"
+echo "🎉 Provisioning completed successfully!"
