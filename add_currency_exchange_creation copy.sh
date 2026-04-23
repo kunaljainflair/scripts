@@ -4,8 +4,8 @@
 # =========================
 # Configurable variables
 # =========================
-# BASE_URL="http://localhost:8080"
-BASE_URL="https://brand1.crm-dev.fynxt.com"
+BASE_URL="http://localhost:8080"
+# BASE_URL="https://brand1.crm-dev.fynxt.com"
 
 
 TENANT_ID="5a62b693-c1d2-436d-8644-854b08fc4c7c"
@@ -25,29 +25,26 @@ curl -s -X POST \
   "${BASE_URL}/api/core/meta/objects/name/currency_pair/fields" \
   "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
   -d '{
-        "field_name": "base",
+        "field_name": "source_type",
         "field_label": "f19c5eb2-82be-435c-b5f5-394e4f4424a5",
-        "group_name": "Pair Symbols",
         "field_type": "CORE",
-        "is_encrypted": false,
         "field_data_type": "TEXT",
         "required": false,
-        "is_unique": false,
-        "max_length":20
-        }'
+        "is_indexed": false
+      }'
 
 
-curl -s -X POST \
-  "${BASE_URL}/api/core/meta/objects/name/currency_pair/fields" \
-  "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
-  -d '{
-        "field_name": "quote",
-        "field_label": "f19c5eb2-82be-435c-b5f5-394e4f4424a5",
-        "group_name": "Pair Symbols",
-        "field_type": "CORE",
-        "is_encrypted": false,
-        "field_data_type": "TEXT",
-        "required": false,
-        "is_unique": false,
-        "max_length":20
-        }'
+# curl -s -X POST \
+#   "${BASE_URL}/api/core/meta/objects/name/currency_pair/fields" \
+#   "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
+#   -d '{
+#         "field_name": "quote",
+#         "field_label": "f19c5eb2-82be-435c-b5f5-394e4f4424a5",
+#         "group_name": "Pair Symbols",
+#         "field_type": "CORE",
+#         "is_encrypted": false,
+#         "field_data_type": "TEXT",
+#         "required": false,
+#         "is_unique": false,
+#         "max_length":20
+#         }'
