@@ -103,8 +103,8 @@ curl -s -X POST \
         "field_name": "source_type",
         "field_label": "Source Type",
         "field_type": "CORE",
-        "field_data_type": "PICKLIST"
-        "required": false,
+        "field_data_type": "TEXT"
+        "required": true,
         "is_indexed": false
       },
       {
@@ -148,21 +148,9 @@ curl -s -X POST \
         "field_name": "source_type",
         "field_label": "Source Type",
         "field_type": "CORE",
-        "field_data_type": "PICKLIST",
-        "asset_id": "8efc913c-8e08-4d43-b7e7-dedd78b1a9f9",
-        "options": [
-            {
-                "value": "Manual",
-                "color_hex": null
-            },
-            {
-                "value": "Fixer",
-                "color_hex": null
-            }
-        ],
+        "field_data_type": "TEXT",
         "required": true,
         "is_indexed": false
-
       },
       {
         "field_name": "name",
@@ -180,6 +168,50 @@ curl -s -X POST \
     ]
   }'
 echo "✅ currency_symbol created"
+
+
+# =========================
+# 4. Create currency_rate_config
+# =========================
+curl -s -X POST \
+  "${BASE_URL}/api/core/meta/objects/bundle" \
+  "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
+  -d '{
+    "object": {
+      "entity_name": "currency_rate_config",
+      "label": "Currency Rate Config",
+      "description": "---",
+      "entity_type": "CORE",
+      "entity_strength": "STRONG_ENTITY",
+      "allow_multiple_instance": true,
+      "parent": ""
+    },
+    "fields": [
+      {
+        "field_name": "polling_minutes",
+        "field_label": "Polling Interval",
+        "field_type": "CORE",
+        "field_data_type": "INTEGER",
+        "required": true
+      },
+      {
+        "field_name": "provider",
+        "field_label": "Provider",
+        "field_type": "CORE",
+        "field_data_type": "TEXT",
+        "required": true
+      },
+      {
+        "field_name": "api_key",
+        "field_label": "API Key",
+        "field_type": "CORE",
+        "field_data_type": "TEXT",
+        "required": true
+      }
+    ]
+  }'
+
+echo "✅ currency_rate_config created"
 
 # =========================
 # 3. Publish objects (first pass)
