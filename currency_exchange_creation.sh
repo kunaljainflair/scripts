@@ -112,7 +112,18 @@ curl -s -X POST \
         "field_label": "Manual Rate Enabled",
         "field_type": "CORE",
         "field_data_type": "BOOLEAN"
-      }
+      },
+      {
+      "field_name": "sequence_number",
+      "field_label": "abbad23c-b9fe-40db-85b0-37d80e3a47cf",
+      "field_data_type": "SEQUENCE",
+      "required": false,
+      "is_unique": false,
+      "is_indexed": false,
+      "field_type": "CORE",
+      "padding": 8,
+      "start_at": 1
+    }
     ],
     "actions":[
     ]
