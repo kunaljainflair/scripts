@@ -103,7 +103,7 @@ curl -s -X POST \
         "field_name": "source_type",
         "field_label": "Source Type",
         "field_type": "CORE",
-        "field_data_type": "TEXT"
+        "field_data_type": "TEXT",
         "required": true,
         "is_indexed": false
       },
@@ -227,7 +227,7 @@ echo "✅ currency_rate_config created"
 # =========================
 # 3. Publish objects (first pass)
 # =========================
-for ENTITY in currency_pair currency_symbol; do
+for ENTITY in currency_pair currency_symbol currency_rate_config; do
   curl -s -X POST \
     "${BASE_URL}/api/core/meta/objects/name/${ENTITY}/publish" \
     "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}"
@@ -293,6 +293,7 @@ curl -s -X POST \
   -d '{
     "name": "sync_pairs",
     "label": "",
+    "action_entity_type": "CORE",
     "input_form_id": null,
     "type": ""
   }'
@@ -307,6 +308,7 @@ curl -s -X POST \
     "label": "",
     "input_form_id": null,
     "type": "",
+    "action_entity_type": "CORE",
     "parameters": [
       {
         "name": "base_symbol_id",
@@ -328,6 +330,7 @@ curl -s -X POST \
     "name": "get_pair",
     "label": "",
     "input_form_id": null,
+    "action_entity_type": "CORE",
     "type": ""
   }'
 echo "✅ Action registered: get_pair"
@@ -340,6 +343,7 @@ curl -s -X POST \
     "name": "edit_pair",
     "label": "Edit",
     "input_form_id": "",
+    "action_entity_type": "CORE",
     "type": "ROW"
   }'
 echo "✅ Action registered: edit"
@@ -351,6 +355,7 @@ curl -s -X POST \
   -d '{
     "name": "create_pair",
     "label": "New currency pair",
+    "action_entity_type": "CORE",
     "input_form_id": "",
     "type": "ROW"
   }'
