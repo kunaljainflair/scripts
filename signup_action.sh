@@ -4,8 +4,8 @@ set -e
 # =========================
 # Configurable variables
 # =========================
-# BASE_URL="http://localhost:8080"
-BASE_URL="https://brand1.crm-dev.fynxt.com"
+BASE_URL="http://localhost:8080"
+# BASE_URL="https://brand1.crm-dev.fynxt.com"
 
 
 TENANT_ID="5a62b693-c1d2-436d-8644-854b08fc4c7c"
@@ -20,21 +20,19 @@ COMMON_HEADER=(-H "x-tenant-id: ${TENANT_ID}" -H "x-user-id: ${USER_ID}" -H "x-u
 
 JSON_HEADER=(-H "Content-Type: application/json")
 
-echo "🚀 Starting update for tenant: ${TENANT_ID}"
-
 curl -s -X POST \
-  "${BASE_URL}/api/core/meta/objects/name/currency_pair/fields" \
+  "${BASE_URL}/api/core/meta/objects/name/contact/actions" \
   "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
   -d '{
-        "field_name": "source_type",
-        "field_label": "abbad23c-b9fe-40db-85b0-37d80e3a47cf",
-        "field_type": "CORE",
-        "field_data_type": "TEXT",
-        "required": false,
-        "is_indexed": false
-      }'
-     
-for ENTITY in currency_pair; do
+    "name": "signup",
+    "label": "abbad23c-b9fe-40db-85b0-37d80e3a47cf",
+    "action_entity_type": "CORE",
+    "input_form_id": "",
+    "type": "ROW"
+  }'
+echo "✅ Action registered: signup"
+
+for ENTITY in contact; do
   curl -s -X POST \
     "${BASE_URL}/api/core/meta/objects/name/${ENTITY}/publish" \
     "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}"

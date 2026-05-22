@@ -1,0 +1,993 @@
+{
+    "namespace": "toast_messages",
+    "keys": [
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "signup-email-exists"
+                }
+            ],
+            "key": "SIGNUP_EMAIL_EXISTS",
+            "en": {
+                "defaultValue": "This email address is already registered. Please sign in or use a different email."
+            },
+            "ar": {
+                "defaultValue": "عنوان البريد الإلكتروني هذا مسجل بالفعل. يرجى تسجيل الدخول أو استخدام بريد إلكتروني مختلف."
+            },
+            "es": {
+                "defaultValue": "Esta dirección de correo electrónico ya está registrada. Por favor, inicie sesión o use un correo diferente."
+            },
+            "id": {
+                "defaultValue": "Alamat email ini sudah terdaftar. Silakan masuk atau gunakan email yang berbeda."
+            },
+            "ja": {
+                "defaultValue": "このメールアドレスはすでに登録されています。サインインするか、別のメールアドレスをご使用ください。"
+            },
+            "ms": {
+                "defaultValue": "Alamat e-mel ini sudah didaftarkan. Sila log masuk atau gunakan e-mel yang berbeza."
+            },
+            "th": {
+                "defaultValue": "ที่อยู่อีเมลนี้ถูกลงทะเบียนแล้ว กรุณาเข้าสู่ระบบหรือใช้อีเมลอื่น"
+            },
+            "vi": {
+                "defaultValue": "Địa chỉ email này đã được đăng ký. Vui lòng đăng nhập hoặc sử dụng email khác."
+            },
+            "ko": {
+                "defaultValue": "이 이메일 주소는 이미 등록되어 있습니다. 로그인하거나 다른 이메일을 사용해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "signup-phone-exists"
+                }
+            ],
+            "key": "SIGNUP_PHONE_EXISTS",
+            "en": {
+                "defaultValue": "This phone number is already registered. Please use a different number."
+            },
+            "ar": {
+                "defaultValue": "رقم الهاتف هذا مسجل بالفعل. يرجى استخدام رقم مختلف."
+            },
+            "es": {
+                "defaultValue": "Este número de teléfono ya está registrado. Por favor, use un número diferente."
+            },
+            "id": {
+                "defaultValue": "Nomor telepon ini sudah terdaftar. Silakan gunakan nomor yang berbeda."
+            },
+            "ja": {
+                "defaultValue": "この電話番号はすでに登録されています。別の番号をご使用ください。"
+            },
+            "ms": {
+                "defaultValue": "Nombor telefon ini sudah didaftarkan. Sila gunakan nombor yang berbeza."
+            },
+            "th": {
+                "defaultValue": "หมายเลขโทรศัพท์นี้ถูกลงทะเบียนแล้ว กรุณาใช้หมายเลขอื่น"
+            },
+            "vi": {
+                "defaultValue": "Số điện thoại này đã được đăng ký. Vui lòng sử dụng số khác."
+            },
+            "ko": {
+                "defaultValue": "이 전화번호는 이미 등록되어 있습니다. 다른 번호를 사용해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "signup-username-exists"
+                }
+            ],
+            "key": "SIGNUP_USERNAME_EXISTS",
+            "en": {
+                "defaultValue": "This username is already taken. Please choose a different one."
+            },
+            "ar": {
+                "defaultValue": "اسم المستخدم هذا مأخوذ بالفعل. يرجى اختيار اسم مختلف."
+            },
+            "es": {
+                "defaultValue": "Este nombre de usuario ya está en uso. Por favor, elija uno diferente."
+            },
+            "id": {
+                "defaultValue": "Nama pengguna ini sudah digunakan. Silakan pilih nama yang berbeda."
+            },
+            "ja": {
+                "defaultValue": "このユーザー名はすでに使用されています。別のユーザー名をお選びください。"
+            },
+            "ms": {
+                "defaultValue": "Nama pengguna ini sudah digunakan. Sila pilih nama yang berbeza."
+            },
+            "th": {
+                "defaultValue": "ชื่อผู้ใช้นี้ถูกใช้แล้ว กรุณาเลือกชื่ออื่น"
+            },
+            "vi": {
+                "defaultValue": "Tên người dùng này đã được sử dụng. Vui lòng chọn tên khác."
+            },
+            "ko": {
+                "defaultValue": "이 사용자 이름은 이미 사용 중입니다. 다른 이름을 선택해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "validation-error"
+                }
+            ],
+            "key": "VALIDATION_ERROR",
+            "en": {
+                "defaultValue": "Some fields are invalid. Please check your input and try again."
+            },
+            "ar": {
+                "defaultValue": "بعض الحقول غير صالحة. يرجى التحقق من المدخلات والمحاولة مرة أخرى."
+            },
+            "es": {
+                "defaultValue": "Algunos campos son inválidos. Por favor, revise su entrada e intente de nuevo."
+            },
+            "id": {
+                "defaultValue": "Beberapa field tidak valid. Silakan periksa input Anda dan coba lagi."
+            },
+            "ja": {
+                "defaultValue": "一部のフィールドが無効です。入力内容を確認してもう一度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Beberapa medan tidak sah. Sila semak input anda dan cuba lagi."
+            },
+            "th": {
+                "defaultValue": "บางช่องข้อมูลไม่ถูกต้อง กรุณาตรวจสอบข้อมูลของคุณและลองอีกครั้ง"
+            },
+            "vi": {
+                "defaultValue": "Một số trường không hợp lệ. Vui lòng kiểm tra thông tin nhập và thử lại."
+            },
+            "ko": {
+                "defaultValue": "일부 필드가 유효하지 않습니다. 입력 내용을 확인하고 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "signup-iam-creation-failed"
+                }
+            ],
+            "key": "SIGNUP_IAM_CREATION_FAILED",
+            "en": {
+                "defaultValue": "Account creation failed. Please try again or contact support."
+            },
+            "ar": {
+                "defaultValue": "فشل إنشاء الحساب. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+            },
+            "es": {
+                "defaultValue": "Error al crear la cuenta. Por favor, intente de nuevo o contacte con soporte."
+            },
+            "id": {
+                "defaultValue": "Pembuatan akun gagal. Silakan coba lagi atau hubungi dukungan."
+            },
+            "ja": {
+                "defaultValue": "アカウントの作成に失敗しました。もう一度お試しいただくか、サポートにお問い合わせください。"
+            },
+            "ms": {
+                "defaultValue": "Penciptaan akaun gagal. Sila cuba lagi atau hubungi sokongan."
+            },
+            "th": {
+                "defaultValue": "การสร้างบัญชีล้มเหลว กรุณาลองอีกครั้งหรือติดต่อฝ่ายสนับสนุน"
+            },
+            "vi": {
+                "defaultValue": "Tạo tài khoản thất bại. Vui lòng thử lại hoặc liên hệ hỗ trợ."
+            },
+            "ko": {
+                "defaultValue": "계정 생성에 실패했습니다. 다시 시도하거나 지원팀에 문의해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "signup-contact-creation-failed"
+                }
+            ],
+            "key": "SIGNUP_CONTACT_CREATION_FAILED",
+            "en": {
+                "defaultValue": "Profile creation failed. Please try again or contact support."
+            },
+            "ar": {
+                "defaultValue": "فشل إنشاء الملف الشخصي. يرجى المحاولة مرة أخرى أو التواصل مع الدعم."
+            },
+            "es": {
+                "defaultValue": "Error al crear el perfil. Por favor, intente de nuevo o contacte con soporte."
+            },
+            "id": {
+                "defaultValue": "Pembuatan profil gagal. Silakan coba lagi atau hubungi dukungan."
+            },
+            "ja": {
+                "defaultValue": "プロフィールの作成に失敗しました。もう一度お試しいただくか、サポートにお問い合わせください。"
+            },
+            "ms": {
+                "defaultValue": "Penciptaan profil gagal. Sila cuba lagi atau hubungi sokongan."
+            },
+            "th": {
+                "defaultValue": "การสร้างโปรไฟล์ล้มเหลว กรุณาลองอีกครั้งหรือติดต่อฝ่ายสนับสนุน"
+            },
+            "vi": {
+                "defaultValue": "Tạo hồ sơ thất bại. Vui lòng thử lại hoặc liên hệ hỗ trợ."
+            },
+            "ko": {
+                "defaultValue": "프로필 생성에 실패했습니다. 다시 시도하거나 지원팀에 문의해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "signup-failed"
+                }
+            ],
+            "key": "SIGNUP_FAILED",
+            "en": {
+                "defaultValue": "Signup failed. Please try again later."
+            },
+            "ar": {
+                "defaultValue": "فشل التسجيل. يرجى المحاولة مرة أخرى لاحقاً."
+            },
+            "es": {
+                "defaultValue": "Error en el registro. Por favor, intente más tarde."
+            },
+            "id": {
+                "defaultValue": "Pendaftaran gagal. Silakan coba lagi nanti."
+            },
+            "ja": {
+                "defaultValue": "登録に失敗しました。しばらくしてから再度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Pendaftaran gagal. Sila cuba lagi kemudian."
+            },
+            "th": {
+                "defaultValue": "การสมัครล้มเหลว กรุณาลองอีกครั้งในภายหลัง"
+            },
+            "vi": {
+                "defaultValue": "Đăng ký thất bại. Vui lòng thử lại sau."
+            },
+            "ko": {
+                "defaultValue": "가입에 실패했습니다. 잠시 후 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "signin-invalid-credentials"
+                }
+            ],
+            "key": "SIGNIN_INVALID_CREDENTIALS",
+            "en": {
+                "defaultValue": "Incorrect email or password. Please try again."
+            },
+            "ar": {
+                "defaultValue": "البريد الإلكتروني أو كلمة المرور غير صحيحة. يرجى المحاولة مرة أخرى."
+            },
+            "es": {
+                "defaultValue": "Correo electrónico o contraseña incorrectos. Por favor, intente de nuevo."
+            },
+            "id": {
+                "defaultValue": "Email atau kata sandi salah. Silakan coba lagi."
+            },
+            "ja": {
+                "defaultValue": "メールアドレスまたはパスワードが間違っています。もう一度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "E-mel atau kata laluan tidak betul. Sila cuba lagi."
+            },
+            "th": {
+                "defaultValue": "อีเมลหรือรหัสผ่านไม่ถูกต้อง กรุณาลองอีกครั้ง"
+            },
+            "vi": {
+                "defaultValue": "Email hoặc mật khẩu không đúng. Vui lòng thử lại."
+            },
+            "ko": {
+                "defaultValue": "이메일 또는 비밀번호가 잘못되었습니다. 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "signin-account-locked"
+                }
+            ],
+            "key": "SIGNIN_ACCOUNT_LOCKED",
+            "en": {
+                "defaultValue": "Your account has been locked due to multiple failed attempts. Please contact support."
+            },
+            "ar": {
+                "defaultValue": "تم قفل حسابك بسبب محاولات فاشلة متعددة. يرجى التواصل مع الدعم."
+            },
+            "es": {
+                "defaultValue": "Su cuenta ha sido bloqueada por múltiples intentos fallidos. Por favor, contacte con soporte."
+            },
+            "id": {
+                "defaultValue": "Akun Anda telah dikunci karena beberapa kali gagal masuk. Silakan hubungi dukungan."
+            },
+            "ja": {
+                "defaultValue": "複数回のログイン失敗によりアカウントがロックされました。サポートにお問い合わせください。"
+            },
+            "ms": {
+                "defaultValue": "Akaun anda telah dikunci akibat beberapa percubaan gagal. Sila hubungi sokongan."
+            },
+            "th": {
+                "defaultValue": "บัญชีของคุณถูกล็อคเนื่องจากพยายามเข้าสู่ระบบหลายครั้ง กรุณาติดต่อฝ่ายสนับสนุน"
+            },
+            "vi": {
+                "defaultValue": "Tài khoản của bạn đã bị khóa do nhiều lần đăng nhập thất bại. Vui lòng liên hệ hỗ trợ."
+            },
+            "ko": {
+                "defaultValue": "여러 번의 실패한 시도로 인해 계정이 잠겼습니다. 지원팀에 문의해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "signin-account-disabled"
+                }
+            ],
+            "key": "SIGNIN_ACCOUNT_DISABLED",
+            "en": {
+                "defaultValue": "Your account has been disabled. Please contact support."
+            },
+            "ar": {
+                "defaultValue": "تم تعطيل حسابك. يرجى التواصل مع الدعم."
+            },
+            "es": {
+                "defaultValue": "Su cuenta ha sido deshabilitada. Por favor, contacte con soporte."
+            },
+            "id": {
+                "defaultValue": "Akun Anda telah dinonaktifkan. Silakan hubungi dukungan."
+            },
+            "ja": {
+                "defaultValue": "アカウントが無効化されています。サポートにお問い合わせください。"
+            },
+            "ms": {
+                "defaultValue": "Akaun anda telah dinyahdayakan. Sila hubungi sokongan."
+            },
+            "th": {
+                "defaultValue": "บัญชีของคุณถูกปิดใช้งาน กรุณาติดต่อฝ่ายสนับสนุน"
+            },
+            "vi": {
+                "defaultValue": "Tài khoản của bạn đã bị vô hiệu hóa. Vui lòng liên hệ hỗ trợ."
+            },
+            "ko": {
+                "defaultValue": "계정이 비활성화되었습니다. 지원팀에 문의해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "signin-token-expired"
+                }
+            ],
+            "key": "SIGNIN_TOKEN_EXPIRED",
+            "en": {
+                "defaultValue": "Your session has expired. Please sign in again."
+            },
+            "ar": {
+                "defaultValue": "انتهت جلستك. يرجى تسجيل الدخول مرة أخرى."
+            },
+            "es": {
+                "defaultValue": "Su sesión ha expirado. Por favor, inicie sesión de nuevo."
+            },
+            "id": {
+                "defaultValue": "Sesi Anda telah berakhir. Silakan masuk kembali."
+            },
+            "ja": {
+                "defaultValue": "セッションの有効期限が切れました。再度サインインしてください。"
+            },
+            "ms": {
+                "defaultValue": "Sesi anda telah tamat. Sila log masuk semula."
+            },
+            "th": {
+                "defaultValue": "เซสชันของคุณหมดอายุแล้ว กรุณาเข้าสู่ระบบอีกครั้ง"
+            },
+            "vi": {
+                "defaultValue": "Phiên làm việc của bạn đã hết hạn. Vui lòng đăng nhập lại."
+            },
+            "ko": {
+                "defaultValue": "세션이 만료되었습니다. 다시 로그인해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "signin-failed"
+                }
+            ],
+            "key": "SIGNIN_FAILED",
+            "en": {
+                "defaultValue": "Sign in failed. Please try again later."
+            },
+            "ar": {
+                "defaultValue": "فشل تسجيل الدخول. يرجى المحاولة مرة أخرى لاحقاً."
+            },
+            "es": {
+                "defaultValue": "Error al iniciar sesión. Por favor, intente más tarde."
+            },
+            "id": {
+                "defaultValue": "Masuk gagal. Silakan coba lagi nanti."
+            },
+            "ja": {
+                "defaultValue": "サインインに失敗しました。しばらくしてから再度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Log masuk gagal. Sila cuba lagi kemudian."
+            },
+            "th": {
+                "defaultValue": "การเข้าสู่ระบบล้มเหลว กรุณาลองอีกครั้งในภายหลัง"
+            },
+            "vi": {
+                "defaultValue": "Đăng nhập thất bại. Vui lòng thử lại sau."
+            },
+            "ko": {
+                "defaultValue": "로그인에 실패했습니다. 잠시 후 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "reset-password-invalid-token"
+                }
+            ],
+            "key": "RESET_PASSWORD_INVALID_TOKEN",
+            "en": {
+                "defaultValue": "The password reset link is invalid. Please request a new one."
+            },
+            "ar": {
+                "defaultValue": "رابط إعادة تعيين كلمة المرور غير صالح. يرجى طلب رابط جديد."
+            },
+            "es": {
+                "defaultValue": "El enlace de restablecimiento de contraseña no es válido. Por favor, solicite uno nuevo."
+            },
+            "id": {
+                "defaultValue": "Tautan reset kata sandi tidak valid. Silakan minta tautan baru."
+            },
+            "ja": {
+                "defaultValue": "パスワードリセットリンクが無効です。新しいリンクをリクエストしてください。"
+            },
+            "ms": {
+                "defaultValue": "Pautan tetapan semula kata laluan tidak sah. Sila minta pautan baru."
+            },
+            "th": {
+                "defaultValue": "ลิงก์รีเซ็ตรหัสผ่านไม่ถูกต้อง กรุณาขอลิงก์ใหม่"
+            },
+            "vi": {
+                "defaultValue": "Liên kết đặt lại mật khẩu không hợp lệ. Vui lòng yêu cầu liên kết mới."
+            },
+            "ko": {
+                "defaultValue": "비밀번호 재설정 링크가 유효하지 않습니다. 새 링크를 요청해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "reset-password-token-expired"
+                }
+            ],
+            "key": "RESET_PASSWORD_TOKEN_EXPIRED",
+            "en": {
+                "defaultValue": "The password reset link has expired. Please request a new one."
+            },
+            "ar": {
+                "defaultValue": "انتهت صلاحية رابط إعادة تعيين كلمة المرور. يرجى طلب رابط جديد."
+            },
+            "es": {
+                "defaultValue": "El enlace de restablecimiento de contraseña ha expirado. Por favor, solicite uno nuevo."
+            },
+            "id": {
+                "defaultValue": "Tautan reset kata sandi telah kedaluwarsa. Silakan minta tautan baru."
+            },
+            "ja": {
+                "defaultValue": "パスワードリセットリンクの有効期限が切れました。新しいリンクをリクエストしてください。"
+            },
+            "ms": {
+                "defaultValue": "Pautan tetapan semula kata laluan telah tamat tempoh. Sila minta pautan baru."
+            },
+            "th": {
+                "defaultValue": "ลิงก์รีเซ็ตรหัสผ่านหมดอายุแล้ว กรุณาขอลิงก์ใหม่"
+            },
+            "vi": {
+                "defaultValue": "Liên kết đặt lại mật khẩu đã hết hạn. Vui lòng yêu cầu liên kết mới."
+            },
+            "ko": {
+                "defaultValue": "비밀번호 재설정 링크의 유효 기간이 만료되었습니다. 새 링크를 요청해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "change-password-invalid-credentials"
+                }
+            ],
+            "key": "CHANGE_PASSWORD_INVALID_CREDENTIALS",
+            "en": {
+                "defaultValue": "The current password you entered is incorrect."
+            },
+            "ar": {
+                "defaultValue": "كلمة المرور الحالية التي أدخلتها غير صحيحة."
+            },
+            "es": {
+                "defaultValue": "La contraseña actual ingresada es incorrecta."
+            },
+            "id": {
+                "defaultValue": "Kata sandi saat ini yang Anda masukkan salah."
+            },
+            "ja": {
+                "defaultValue": "入力した現在のパスワードが正しくありません。"
+            },
+            "ms": {
+                "defaultValue": "Kata laluan semasa yang anda masukkan tidak betul."
+            },
+            "th": {
+                "defaultValue": "รหัสผ่านปัจจุบันที่คุณกรอกไม่ถูกต้อง"
+            },
+            "vi": {
+                "defaultValue": "Mật khẩu hiện tại bạn nhập không đúng."
+            },
+            "ko": {
+                "defaultValue": "입력하신 현재 비밀번호가 올바르지 않습니다."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "change-password-failed"
+                }
+            ],
+            "key": "CHANGE_PASSWORD_FAILED",
+            "en": {
+                "defaultValue": "Failed to update your password. Please try again."
+            },
+            "ar": {
+                "defaultValue": "فشل تحديث كلمة المرور. يرجى المحاولة مرة أخرى."
+            },
+            "es": {
+                "defaultValue": "Error al actualizar la contraseña. Por favor, intente de nuevo."
+            },
+            "id": {
+                "defaultValue": "Gagal memperbarui kata sandi. Silakan coba lagi."
+            },
+            "ja": {
+                "defaultValue": "パスワードの更新に失敗しました。もう一度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Gagal mengemas kini kata laluan. Sila cuba lagi."
+            },
+            "th": {
+                "defaultValue": "ไม่สามารถอัปเดตรหัสผ่านได้ กรุณาลองอีกครั้ง"
+            },
+            "vi": {
+                "defaultValue": "Cập nhật mật khẩu thất bại. Vui lòng thử lại."
+            },
+            "ko": {
+                "defaultValue": "비밀번호 업데이트에 실패했습니다. 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "change-password-user-not-found"
+                }
+            ],
+            "key": "CHANGE_PASSWORD_USER_NOT_FOUND",
+            "en": {
+                "defaultValue": "User not found. Please contact support."
+            },
+            "ar": {
+                "defaultValue": "المستخدم غير موجود. يرجى التواصل مع الدعم."
+            },
+            "es": {
+                "defaultValue": "Usuario no encontrado. Por favor, contacte con soporte."
+            },
+            "id": {
+                "defaultValue": "Pengguna tidak ditemukan. Silakan hubungi dukungan."
+            },
+            "ja": {
+                "defaultValue": "ユーザーが見つかりません。サポートにお問い合わせください。"
+            },
+            "ms": {
+                "defaultValue": "Pengguna tidak dijumpai. Sila hubungi sokongan."
+            },
+            "th": {
+                "defaultValue": "ไม่พบผู้ใช้ กรุณาติดต่อฝ่ายสนับสนุน"
+            },
+            "vi": {
+                "defaultValue": "Không tìm thấy người dùng. Vui lòng liên hệ hỗ trợ."
+            },
+            "ko": {
+                "defaultValue": "사용자를 찾을 수 없습니다. 지원팀에 문의해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "not-found"
+                }
+            ],
+            "key": "NOT_FOUND",
+            "en": {
+                "defaultValue": "The requested resource was not found."
+            },
+            "ar": {
+                "defaultValue": "المورد المطلوب غير موجود."
+            },
+            "es": {
+                "defaultValue": "El recurso solicitado no fue encontrado."
+            },
+            "id": {
+                "defaultValue": "Sumber daya yang diminta tidak ditemukan."
+            },
+            "ja": {
+                "defaultValue": "リクエストされたリソースが見つかりませんでした。"
+            },
+            "ms": {
+                "defaultValue": "Sumber yang diminta tidak dijumpai."
+            },
+            "th": {
+                "defaultValue": "ไม่พบทรัพยากรที่ร้องขอ"
+            },
+            "vi": {
+                "defaultValue": "Không tìm thấy tài nguyên được yêu cầu."
+            },
+            "ko": {
+                "defaultValue": "요청한 리소스를 찾을 수 없습니다."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "bad-request"
+                }
+            ],
+            "key": "BAD_REQUEST",
+            "en": {
+                "defaultValue": "Invalid request. Please check your input and try again."
+            },
+            "ar": {
+                "defaultValue": "طلب غير صالح. يرجى التحقق من المدخلات والمحاولة مرة أخرى."
+            },
+            "es": {
+                "defaultValue": "Solicitud inválida. Por favor, revise su entrada e intente de nuevo."
+            },
+            "id": {
+                "defaultValue": "Permintaan tidak valid. Silakan periksa input Anda dan coba lagi."
+            },
+            "ja": {
+                "defaultValue": "無効なリクエストです。入力内容を確認してもう一度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Permintaan tidak sah. Sila semak input anda dan cuba lagi."
+            },
+            "th": {
+                "defaultValue": "คำขอไม่ถูกต้อง กรุณาตรวจสอบข้อมูลของคุณและลองอีกครั้ง"
+            },
+            "vi": {
+                "defaultValue": "Yêu cầu không hợp lệ. Vui lòng kiểm tra thông tin nhập và thử lại."
+            },
+            "ko": {
+                "defaultValue": "잘못된 요청입니다. 입력 내용을 확인하고 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "external-service-error"
+                }
+            ],
+            "key": "EXTERNAL_SERVICE_ERROR",
+            "en": {
+                "defaultValue": "An external service is unavailable. Please try again later."
+            },
+            "ar": {
+                "defaultValue": "خدمة خارجية غير متاحة. يرجى المحاولة مرة أخرى لاحقاً."
+            },
+            "es": {
+                "defaultValue": "Un servicio externo no está disponible. Por favor, intente más tarde."
+            },
+            "id": {
+                "defaultValue": "Layanan eksternal tidak tersedia. Silakan coba lagi nanti."
+            },
+            "ja": {
+                "defaultValue": "外部サービスが利用できません。しばらくしてから再度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Perkhidmatan luaran tidak tersedia. Sila cuba lagi kemudian."
+            },
+            "th": {
+                "defaultValue": "บริการภายนอกไม่พร้อมใช้งาน กรุณาลองอีกครั้งในภายหลัง"
+            },
+            "vi": {
+                "defaultValue": "Dịch vụ bên ngoài không khả dụng. Vui lòng thử lại sau."
+            },
+            "ko": {
+                "defaultValue": "외부 서비스를 사용할 수 없습니다. 잠시 후 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "database-error"
+                }
+            ],
+            "key": "DATABASE_ERROR",
+            "en": {
+                "defaultValue": "A database error occurred. Please try again later."
+            },
+            "ar": {
+                "defaultValue": "حدث خطأ في قاعدة البيانات. يرجى المحاولة مرة أخرى لاحقاً."
+            },
+            "es": {
+                "defaultValue": "Ocurrió un error en la base de datos. Por favor, intente más tarde."
+            },
+            "id": {
+                "defaultValue": "Terjadi kesalahan database. Silakan coba lagi nanti."
+            },
+            "ja": {
+                "defaultValue": "データベースエラーが発生しました。しばらくしてから再度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Ralat pangkalan data berlaku. Sila cuba lagi kemudian."
+            },
+            "th": {
+                "defaultValue": "เกิดข้อผิดพลาดของฐานข้อมูล กรุณาลองอีกครั้งในภายหลัง"
+            },
+            "vi": {
+                "defaultValue": "Đã xảy ra lỗi cơ sở dữ liệu. Vui lòng thử lại sau."
+            },
+            "ko": {
+                "defaultValue": "데이터베이스 오류가 발생했습니다. 잠시 후 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "data-integrity-violation"
+                }
+            ],
+            "key": "DATA_INTEGRITY_VIOLATION",
+            "en": {
+                "defaultValue": "A conflict occurred due to duplicate data. Please review and try again."
+            },
+            "ar": {
+                "defaultValue": "حدث تعارض بسبب بيانات مكررة. يرجى المراجعة والمحاولة مرة أخرى."
+            },
+            "es": {
+                "defaultValue": "Ocurrió un conflicto por datos duplicados. Por favor, revise e intente de nuevo."
+            },
+            "id": {
+                "defaultValue": "Konflik terjadi karena data duplikat. Silakan tinjau dan coba lagi."
+            },
+            "ja": {
+                "defaultValue": "データの重複による競合が発生しました。内容を確認してもう一度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Konflik berlaku disebabkan data pendua. Sila semak dan cuba lagi."
+            },
+            "th": {
+                "defaultValue": "เกิดความขัดแย้งเนื่องจากข้อมูลซ้ำ กรุณาตรวจสอบและลองอีกครั้ง"
+            },
+            "vi": {
+                "defaultValue": "Xảy ra xung đột do dữ liệu trùng lặp. Vui lòng xem lại và thử lại."
+            },
+            "ko": {
+                "defaultValue": "중복된 데이터로 인해 충돌이 발생했습니다. 검토 후 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "data-constraint-violation"
+                }
+            ],
+            "key": "DATA_CONSTRAINT_VIOLATION",
+            "en": {
+                "defaultValue": "The data provided violates one or more constraints. Please correct and retry."
+            },
+            "ar": {
+                "defaultValue": "البيانات المقدمة تنتهك قيداً أو أكثر. يرجى التصحيح والمحاولة مرة أخرى."
+            },
+            "es": {
+                "defaultValue": "Los datos proporcionados violan una o más restricciones. Por favor, corrija y reintente."
+            },
+            "id": {
+                "defaultValue": "Data yang diberikan melanggar satu atau lebih batasan. Silakan perbaiki dan coba lagi."
+            },
+            "ja": {
+                "defaultValue": "入力されたデータが1つ以上の制約に違反しています。修正してもう一度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Data yang diberikan melanggar satu atau lebih kekangan. Sila betulkan dan cuba lagi."
+            },
+            "th": {
+                "defaultValue": "ข้อมูลที่ให้มาละเมิดข้อจำกัดหนึ่งรายการขึ้นไป กรุณาแก้ไขและลองอีกครั้ง"
+            },
+            "vi": {
+                "defaultValue": "Dữ liệu được cung cấp vi phạm một hoặc nhiều ràng buộc. Vui lòng sửa và thử lại."
+            },
+            "ko": {
+                "defaultValue": "제공된 데이터가 하나 이상의 제약 조건을 위반합니다. 수정 후 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "database-timeout"
+                }
+            ],
+            "key": "DATABASE_TIMEOUT",
+            "en": {
+                "defaultValue": "The database request timed out. Please try again."
+            },
+            "ar": {
+                "defaultValue": "انتهت مهلة طلب قاعدة البيانات. يرجى المحاولة مرة أخرى."
+            },
+            "es": {
+                "defaultValue": "La solicitud a la base de datos expiró. Por favor, intente de nuevo."
+            },
+            "id": {
+                "defaultValue": "Permintaan database habis waktu. Silakan coba lagi."
+            },
+            "ja": {
+                "defaultValue": "データベースリクエストがタイムアウトしました。もう一度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Permintaan pangkalan data tamat masa. Sila cuba lagi."
+            },
+            "th": {
+                "defaultValue": "คำขอฐานข้อมูลหมดเวลา กรุณาลองอีกครั้ง"
+            },
+            "vi": {
+                "defaultValue": "Yêu cầu cơ sở dữ liệu đã hết thời gian chờ. Vui lòng thử lại."
+            },
+            "ko": {
+                "defaultValue": "데이터베이스 요청이 시간 초과되었습니다. 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "external-service-communication-error"
+                }
+            ],
+            "key": "EXTERNAL_SERVICE_COMMUNICATION_ERROR",
+            "en": {
+                "defaultValue": "Unable to reach an external service. Please check your connection and try again."
+            },
+            "ar": {
+                "defaultValue": "تعذر الوصول إلى خدمة خارجية. يرجى التحقق من اتصالك والمحاولة مرة أخرى."
+            },
+            "es": {
+                "defaultValue": "No se puede contactar con el servicio externo. Por favor, verifique su conexión e intente de nuevo."
+            },
+            "id": {
+                "defaultValue": "Tidak dapat menjangkau layanan eksternal. Silakan periksa koneksi Anda dan coba lagi."
+            },
+            "ja": {
+                "defaultValue": "外部サービスに接続できません。接続を確認してもう一度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Tidak dapat menghubungi perkhidmatan luaran. Sila semak sambungan anda dan cuba lagi."
+            },
+            "th": {
+                "defaultValue": "ไม่สามารถเชื่อมต่อบริการภายนอกได้ กรุณาตรวจสอบการเชื่อมต่อและลองอีกครั้ง"
+            },
+            "vi": {
+                "defaultValue": "Không thể kết nối dịch vụ bên ngoài. Vui lòng kiểm tra kết nối và thử lại."
+            },
+            "ko": {
+                "defaultValue": "외부 서비스에 연결할 수 없습니다. 연결을 확인하고 다시 시도해주세요."
+            }
+        },
+        {
+            "type": "SINGLE",
+            "context": [
+                {
+                    "component": "toast",
+                    "type": "message",
+                    "field": "reset-password-user-not-found"
+                }
+            ],
+            "key": "RESET_PASSWORD_USER_NOT_FOUND",
+            "en": {
+                "defaultValue": "User not found. Please try again with a valid account."
+            },
+            "ar": {
+                "defaultValue": "المستخدم غير موجود. يرجى المحاولة مرة أخرى باستخدام حساب صالح."
+            },
+            "es": {
+                "defaultValue": "Usuario no encontrado. Por favor, inténtelo de nuevo con una cuenta válida."
+            },
+            "id": {
+                "defaultValue": "Pengguna tidak ditemukan. Silakan coba lagi dengan akun yang valid."
+            },
+            "ja": {
+                "defaultValue": "ユーザーが見つかりません。有効なアカウントで再度お試しください。"
+            },
+            "ms": {
+                "defaultValue": "Pengguna tidak ditemui. Sila cuba lagi dengan akaun yang sah."
+            },
+            "th": {
+                "defaultValue": "ไม่พบผู้ใช้ กรุณาลองอีกครั้งด้วยบัญชีที่ถูกต้อง"
+            },
+            "vi": {
+                "defaultValue": "Không tìm thấy người dùng. Vui lòng thử lại với tài khoản hợp lệ."
+            },
+            "ko": {
+                "defaultValue": "사용자를 찾을 수 없습니다. 유효한 계정으로 다시 시도해주세요."
+            }
+        }
+    ]
+}

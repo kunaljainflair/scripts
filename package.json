@@ -1,0 +1,19 @@
+{
+  "name": "bulk-insert-notifications",
+  "version": "1.0.0",
+  "description": "A script to bulk insert notifications into a PostgreSQL database",
+  "main": "bulk_insert_notifications.js",
+  "scripts": {
+    "start": "node bulk_insert_notifications.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "faker": "^6.6.6",
+    "pg": "^8.20.0",
+    "uuid": "^13.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
