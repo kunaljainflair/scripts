@@ -4,8 +4,8 @@ set -e
 # =========================
 # Configurable variables
 # =========================
-BASE_URL="http://localhost:8080"
-# BASE_URL="https://brand1.crm-dev.fynxt.com"
+# BASE_URL="http://localhost:8080"
+BASE_URL="https://brand1.crm-dev.fynxt.com"
 
 
 TENANT_ID="5a62b693-c1d2-436d-8644-854b08fc4c7c"
@@ -20,15 +20,15 @@ COMMON_HEADER=(-H "x-tenant-id: ${TENANT_ID}" -H "x-user-id: ${USER_ID}" -H "x-u
 
 JSON_HEADER=(-H "Content-Type: application/json")
 
-curl -s -X POST \
-  "${BASE_URL}/api/core/meta/objects/name/contact/actions" \
+curl -s -X PUT \
+  "${BASE_URL}/api/core/meta/objects/name/contact/actions/signup" \
   "${COMMON_HEADER[@]}" "${JSON_HEADER[@]}" \
   -d '{
     "name": "signup",
-    "label": "abbad23c-b9fe-40db-85b0-37d80e3a47cf",
+    "label": "032a908d-d550-40be-838f-0fdce784b786",
     "action_entity_type": "CORE",
     "input_form_id": "",
-    "type": "ROW"
+    "type": "GLOBAL"
   }'
 echo "✅ Action registered: signup"
 
