@@ -25,6 +25,8 @@ CREATE OR REPLACE VIEW "a65215dc-52d0-40a6-b1cc-a68a84c78f92".users_view
     (users.first_name::text || ' '::text) || users.last_name::text AS users_view_label,
     users.search,
     users.updated_at AS updated_on,
+    users.created_by,
+    users.updated_by,
     users.is_deleted
    FROM users
   WHERE users.tenant_id::text = 'a65215dc-52d0-40a6-b1cc-a68a84c78f92'::text AND users.is_deleted = false
@@ -50,6 +52,8 @@ UNION ALL
     (cp_users.first_name::text || ' '::text) || cp_users.last_name::text AS users_view_label,
     to_tsvector('simple'::regconfig, ''::text) AS search,
     NULL::timestamp(6) with time zone AS updated_on,
+    NULL::uuid AS created_by,
+    NULL::uuid AS updated_by,
     false AS is_deleted
    FROM cp_users
   WHERE cp_users.tenant_id::text = 'a65215dc-52d0-40a6-b1cc-a68a84c78f92'::text;
